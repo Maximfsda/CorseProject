@@ -26,7 +26,6 @@ public class Main {
         return salary;
     }
 
-    //    //Проверить код (0)
     public static Employee salaryMin(Employee[] myEmployee) {
         Employee min = myEmployee[0];
         for (int i = 0; i < myEmployee.length; i++) {
@@ -34,13 +33,13 @@ public class Main {
                 if (myEmployee[i].getSalary() < min.getSalary()) {
                     min = myEmployee[i];
                 }
-            }
-            else{
+            } else {
                 break;
             }
         }
         return min;
     }
+
     public static Employee salaryMax(Employee[] myEmployee) {
         Employee max = myEmployee[0];
         for (int i = 0; i < myEmployee.length; i++) {
@@ -48,8 +47,7 @@ public class Main {
                 if (myEmployee[i].getSalary() > max.getSalary()) {
                     max = myEmployee[i];
                 }
-            }
-            else{
+            } else {
                 break;
             }
         }
@@ -57,13 +55,14 @@ public class Main {
     }
 
     public static void nameEmployee(Employee[] myEmployee) {
-        System.out.println("Список сотрудников :");
+        System.out.println("Список сотрудников: ");
         for (int i = 0; i < myEmployee.length; i++) {
             if (myEmployee[i] != null) {
                 System.out.println(myEmployee[i].getName() + " " + myEmployee[i].getSurname() + " " + myEmployee[i].getPatronymic());
             }
         }
     }
+
 
     public static void main(String[] args) {
         Employee[] employee = new Employee[10];
@@ -82,11 +81,11 @@ public class Main {
         System.out.println();
         System.out.println("Cумму затрат на зарплаты в месяц :" + salaryCostsMonth(employee));
         System.out.println();
-        System.out.println("Среднее значение зарплат : "+ salaryCostsMonth(employee) / Employee.getIdCounter());
+        System.out.println("Среднее значение зарплат : " + salaryCostsMonth(employee) / Employee.getIdCounter());
         System.out.println();
-        System.out.println("Сотрудник с min зп: "+ "\n" + salaryMin(employee));
+        System.out.println("Сотрудник с min зп: " + "\n" + salaryMin(employee));
         System.out.println();
-        System.out.println("Сотрудник с max зп: "+ "\n" + salaryMax(employee));
+        System.out.println("Сотрудник с max зп: " + "\n" + salaryMax(employee));
         System.out.println();
         nameEmployee(employee);
     }
