@@ -26,6 +26,23 @@ public class Main {
         return salary;
     }
 
+    public static int averageWage(Employee[] myEmployee) {
+        int numberEmployees = 0;
+        int salary = 0;
+        for (int i = 0; i < myEmployee.length; i++) {
+            if (myEmployee[i] != null) {
+                numberEmployees++;
+            }
+        }
+        for (int i = 0; i < myEmployee.length; i++) {
+            if (myEmployee[i] != null) {
+                salary += myEmployee[i].getSalary();
+            }
+        }
+        return salary / numberEmployees;
+    }
+
+
     public static Employee salaryMin(Employee[] myEmployee) {
         Employee min = myEmployee[0];
         for (int i = 0; i < myEmployee.length; i++) {
@@ -66,13 +83,13 @@ public class Main {
 
     public static void main(String[] args) {
         Employee[] employee = new Employee[10];
-        Employee one = new Employee("Лисицин", "Максим", "Андреевич", 1, 18000);
+        // Employee one = new Employee("Лисицин", "Максим", "Андреевич", 1, 18000);
         Employee two = new Employee("Евдокимов", "Олег", "Иванович", 2, 24000);
         Employee three = new Employee("Карасев", "Глеб", "Генадьевич", 3, 13000);
         Employee four = new Employee("Кошкина", "Анна", "Викторовна", 4, 115000);
         Employee five = new Employee("Лимон", "Антон", "Ростиславович", 5, 111000);
 
-        bookAddition(employee, one);
+        //   bookAddition(employee, one);
         bookAddition(employee, two);
         bookAddition(employee, three);
         bookAddition(employee, four);
@@ -81,7 +98,7 @@ public class Main {
         System.out.println();
         System.out.println("Cумму затрат на зарплаты в месяц :" + salaryCostsMonth(employee));
         System.out.println();
-        System.out.println("Среднее значение зарплат : " + salaryCostsMonth(employee) / Employee.getIdCounter());
+        System.out.println("Среднее значение зарплат : " + averageWage(employee));
         System.out.println();
         System.out.println("Сотрудник с min зп: " + "\n" + salaryMin(employee));
         System.out.println();
