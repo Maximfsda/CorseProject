@@ -1,3 +1,7 @@
+package main.java;
+
+import org.apache.commons.lang3.StringUtils;
+
 public class Main {
 
     public static void bookAddition(Employee[] myEmployee, Employee employee) {
@@ -98,11 +102,11 @@ public class Main {
 
     public static void main(String[] args) {
         Employee[] employee = new Employee[10];
-        Employee one = new Employee("Лисицин", "Максим", "Андреевич", 1, 18000);
+        Employee one = new Employee("Лисицин", "максим", "Андреевич", 1, 18000);
         Employee two = new Employee("Евдокимов", "Олег", "Иванович", 2, 24000);
-        Employee three = new Employee("Карасев", "Глеб", "Генадьевич", 3, 13000);
+        Employee three = new Employee("карасев", "Глеб", "Генадьевич", 3, 13000);
         Employee four = new Employee("Кошкина", "Анна", "Викторовна", 4, 115000);
-        Employee five = new Employee("Лимон", "Антон", "Ростиславович", 5, 111000);
+        Employee five = new Employee("Лимон", "Антон", "ростиславович", 5, 111000);
 
         bookAddition(employee, one);
         bookAddition(employee, two);
